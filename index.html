@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" value="IE=edge" />
+	<title>Lazy_UI组件展示</title>
+	<link type="text/css" rel="stylesheet" href="icon.css">
+	<script src='lib/jquery.js' type='text/javascript'></script>
+	<script src='lib/underscore.js' type='text/javascript'></script>
+	<script src='lib/backbone.js' type='text/javascript'></script>
+	<script src='lib/laconic.js' type='text/javascript'></script>
+	<script src='lib/backbone_ui.js' type='text/javascript'></script>
+
+	
+	
+
+	<script src='lazy_panel/Lazy_Mask.js' type="text/javascript"></script>
+	<script src='common.js' type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="basic.css">
+	</head>
+	<body>
+		<div class="header">
+			<h1>Lazy_UI组件展示</h1>
+			<p>一个简单灵活的Web组件库，包括开关、表格、树形导航、右键菜单、消息组件、对话框、标签页、向导对话框、时间组件、日期组件、格式验证组件等。</p>
+		</div>
+		<div class="container">
+
+
+
+			<!-- ----------------------------------------------- Lazy_Switch   ---------------------------------------- -->
+			<div id="switch_container">
+				<h2 class="instance_header">开关组件</h2>
+				<p>可根据元素位置创建一个<code>Lazy_Switch</code>的实例来完成一个开关按钮的定义和渲染，同时提供多个参数来实现该开关按钮的灵活控制。</p>
+
+				<div class="bs_example">
+					<div id="instance_switch"></div>
+				</div>
+				<div class="highlight">
+					<pre>
+						<code>
+							<span class="nt">var instance_switch =  new Lazy_Switch({</span>
+							<span class="nt">	baseEl : '#instance_switch',</span>
+							<span class="nt">	isOpen : true,</span>
+							<span class="nt">	action : function() {</span>
+							<span class="nt">		/* console.log(instance_switch.val); */</span>
+							<span class="nt">	}</span>
+							<span class="nt">});</span>
+						</code>
+					</pre>
+				</div>
+			</div>
+
+
+
+			<!-- ----------------------------------------------- Lazy_Datagrid   ---------------------------------------- -->
+			<div id="switch_container">
+				<h2 class="instance_header">表格与分页</h2>
+				<p>可根据元素位置创建一个<code>Lazy_Table</code>实例来完成一个表格的定义与渲染。该组件主要以列表的形式展示数据信息，可根据需要实现分页控制和顶端按钮控制。该组件可配置参数灵活多样，便于根据不同需求实现表格形态的多样性，同时提供多种可调用接口便于实现数据信息的灵活操作。</p>
+
+				<div class="bs_example">
+					<div id="instance_table"></div>
+				</div>
+				<div class="highlight">
+					<pre>
+						<code>
+							<span class="nt">var instance_table = new Lazy_Table({</span>
+							<span class="nt">	isFrontPagination:true,</span>
+							<span class="nt">	baseEl:"#instance_table",</span>
+							<span class="nt">	url:'lazy_datagrid/my.json',</span>
+							<span class="nt">	childrenAttr:'childlist',</span>
+							<span class="nt">	clickable:true,</span>
+							<span class="nt">	datagrid_height:410,</span>
+							<span class="nt">	parse:function(resp){</span>
+							<span class="nt">		return{</span>
+							<span class="nt">			list:resp</span>
+							<span class="nt">		}</span>
+							<span class="nt">	},</span>
+							<span class="nt">	/*data:[{</span>
+							<span class="nt">		name:"first",</span>
+							<span class="nt">		number:"1",</span>
+							<span class="nt">		temp:"yanpeiqiong"</span>
+							<span class="nt">		}</span>
+							<span class="nt">	 }],*/</span>
+						    <span class="nt">	onItemClick : function(model) {</span>
+						    <span class="nt">		//alert("clicked!");</span>
+						    <span class="nt">	},</span>
+						    <span class="nt">	onCheckboxClick:function(models){</span>
+						    <span class="nt">	},</span>
+							<span class="nt">	toolbar:[{</span>
+							<span class="nt">		id : 'button1',</span>
+							<span class="nt">		text : '操作1',</span>
+							<span class="nt">		disabled : false,</span>
+							<span class="nt">		handler : function(){</span>					
+							<span class="nt">			alert("clicked[操作1]!");</span>
+							<span class="nt">		}</span>
+							<span class="nt">	},{</span>
+							<span class="nt">		id : 'button2',</span>
+							<span class="nt">		text : '操作2',</span>
+							<span class="nt">		disabled : false,</span>
+							<span class="nt">		handler : _(function(){</span>
+							<span class="nt">			alert("clicked[操作2]!");</span>
+							<span class="nt">		}).bind(this)</span>
+							<span class="nt">	}],</span>
+							<span class="nt">	showNumber:false,</span>		 
+							<span class="nt">	showCheckbox:true,</span>
+							<span class="nt">	isMultiSelect:true,//表示是否支持多选</span>
+							<span class="nt">	columns : [{</span>
+							<span class="nt">		//sortable : true,</span>
+							<span class="nt">		title : 'Name',</span>
+							<span class="nt">		content : 'name',</span>
+							<span class="nt">		formatter:function(value,rowData,rowIndex){</span>
+							<span class="nt">			return value;</span>
+							<span class="nt">		}</span>
+							<span class="nt">	},{</span>
+							<span class="nt">		title : 'Number',</span>
+							<span class="nt">		content : 'number'</span>
+							<span class="nt">	},{</span>
+							<span class="nt">		</span>    
+							<span class="nt">		title : 'Engineer',</span>
+							<span class="nt">		content : 'temp'</span>
+							<span class="nt">	}],</span>
+							<span class="nt">	pager:{</span>
+							<span class="nt">		pageNo:1,</span>
+							<span class="nt">		pageSize:10,</span>
+							<span class="nt">	}});</span>
+						</code>
+					</pre>
+				</div>
+			</div>
+
+
+
+
+			<!-- ----------------------------------------------- Lazy_Tree   ---------------------------------------- -->
+			<div id="tree_container">
+				<h2 class="instance_header">树形组件</h2>
+				<p>可根据元素位置创建一个<code>Lazy_Tree</code>的实例来完成一个树形列表的定义和渲染，以树状结构的形式展示数据信息以及数据之间的逻辑关系。该组件除了提供针对树上节点数据的常用操作接口外，还提供动态插入和动态删除的接口，保证了树形结构的可扩展性和灵活性。</p>
+
+				<div class="bs_example">
+					<div id="instance_tree"></div>
+				</div>
+				<div class="highlight">
+					<pre>
+						<code>
+							<span class="nt">var instance_tree = new Lazy_Tree({</span>
+							<span class="nt">	baseEl:"#instance_tree",</span>		  
+							<span class="nt">	showCheckbox:false,</span>
+							<span class="nt">	imgPosition:"lazy_tree/",</span>
+							<span class="nt">	list:function(){</span>
+							<span class="nt">		return [</span>
+							<span class="nt">			{"content":"超级管理组","id":"1", "pid":"-1","model":{"name":"超级管理组"}},</span>
+							<span class="nt">			{"content":"系统管理组", "id":"11", "pid":"1", "model":{"name":"系统管理组"}},</span>
+							<span class="nt">			{"content":"安全管理组", "id":"12", "pid":"1", "model":{"name":"安全管理组"}},</span>
+							<span class="nt">			{"content":"审计管理组", "id":"13", "pid":"1", "model":{"name":"审计管理组"}},</span>
+							<span class="nt">			{"content":"普通用户组", "id":"14", "pid":"1", "model":{"name":"普通用户组"}},</span>
+							<span class="nt">			{"content":"系统用户子组1","id":"111","pid":"11","model":{"name":"系统用户子组1"}},</span>
+							<span class="nt">			{"content":"系统用户子组2","id":"112","pid":"11","model":{"name":"系统用户子组2"}},</span>
+							<span class="nt">			{"content":"普通用户子组1","id":"141","pid":"14","model":{"name":"普通用户子组1"}},</span>
+							<span class="nt">			{"content":"普通用户子组2","id":"142","pid":"14","model":{"name":"普通用户子组2"}},</span>
+							<span class="nt">			{"content":"普通用户子组3","id":"143","pid":"14","model":{"name":"普通用户子组3"}},</span>
+							<span class="nt">			{"content":"普通用户1","id":"1421","pid":"142","model":{"name":"普通用户1"}},</span>
+							<span class="nt">			{"content":"普通用户2","id":"1422","pid":"142","model":{"name":"普通用户2"}},</span>
+							<span class="nt">			{"content":"普通用户3","id":"1431","pid":"143","model":{"name":"普通用户3"}}</span>
+							<span class="nt">		]</span>
+							<span class="nt">	},</span>				        
+							<span class="nt">	onItemClick:function(model) {</span>
+							<span class="nt">		//alert(model.content);</span>
+							<span class="nt">	}</span>
+						    <span class="nt">	});</span>
+						</code>
+					</pre>
+				</div>
+			</div>
+
+
+		</div>
+
+		<script src="lazy_switch/lazy_switch.js"></script>
+
+		<script src='lazy_datagrid/lazy_Pager.js' type='text/javascript'></script>
+		<script src='lazy_datagrid/lazy_Datagrid.js' type='text/javascript'></script>
+		<script src='lazy_datagrid/tableManager.js' type='text/javascript'></script>
+
+		<script src="lazy_tree/lazy_tree.js" type="text/javascript"></script>
+
+		<script src="index.js" type="text/javascript"></script>
+		<!-- <link rel="stylesheet" type= -->
+		<link rel='stylesheet' type='text/css' href='lazy_datagrid/lazy_Datagrid.css'>
+
+
+	</body>
+	
+</html>

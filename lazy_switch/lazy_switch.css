@@ -1,0 +1,32 @@
+.switch_btn {
+    cursor: pointer;
+    border-radius: 3px;
+    width: 68px;
+    height: 28px;
+    border: 2px solid #999;
+    color: #ffffff;
+    background: #ebe5e5;
+    font-family: "微软雅黑";
+    font-size: 13px;
+}
+
+.switch_btn div {
+    width: 44px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 2px;
+}
+
+.switch_btn .on {
+    float: left;
+    background: #72bb8c;
+    border-right: 2px solid #999;
+    /*color: #fff;*/
+}
+
+.switch_btn .off {
+    float: right;
+    background: #aaa;
+    border-left: 2px solid #999;
+}

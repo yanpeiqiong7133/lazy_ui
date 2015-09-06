@@ -1,0 +1,272 @@
+/***********************************************************************************************************/
+
+/************************************************************ basic css  ***************************************************************/
+
+
+
+
+/*title style*/
+.header{
+	background-color: #333333;
+    border: 1px solid #333333;
+    color: #f2ecec;
+    height: 183px;
+    padding-top: 10px;
+}
+
+.header h1,.header p{
+	margin-left: 108px;
+    width: 801px;
+}
+
+.header p{
+	color:#cbc5c5;
+}
+
+.container{
+	margin:20px 20px 20px 115px;
+	width:70%;
+}
+
+.container p{
+    margin:10px 5px;
+}
+
+.instance_header{
+	width:100%;
+	border-bottom:1px solid #e7dede;
+	padding:5px;
+}
+
+
+
+.bs_example {
+    border-color: #fff;
+    border-style: solid;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05) inset;
+    margin: 0 -15px 15px;
+    padding: 45px 15px 15px;
+    position: relative;
+
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px;
+    box-shadow: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+.bs_example:after {
+    color: #959595;
+    content: "实例：" !important;
+    font-size: 12px;
+    font-weight: 700;
+    left: 15px;
+    letter-spacing: 1px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 15px;
+}
+.bs_example-padded-bottom {
+    padding-bottom: 24px;
+}
+
+code{
+ /*   background-color: #f9f2f4;*/
+    border-radius: 4px;
+    color: #c7254e;
+    font-size: 90%;
+    padding: 2px 4px;
+
+}
+
+pre code {
+    color: inherit;
+    font-size: inherit;
+    white-space: pre-wrap;
+}
+
+
+
+.nt {
+    color: #2f6f9f;
+    float: left;
+    margin-left: 26px;
+}
+.highlight {
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    /*padding: 9px 14px;*/
+}
+
+
+.highlight pre code {
+    color: #333;
+    font-size: inherit;
+}
+
+.bs_example + .highlight, .bs_example + .zero-clipboard + .highlight {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-width: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -16px;
+}
+.highlight pre {
+    word-wrap: break-word;
+    background-color: transparent;
+    border: 0 none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    white-space: nowrap;
+    word-break: normal;
+    border-radius: 4px;
+    color: #333;
+    display: block;
+    font-size: 13px;
+    line-height: 1.42857;
+}
+
+
+/**************************************************  switch *************************************************************/
+.switch_btn {
+    cursor: pointer;
+    border-radius: 3px;
+    width: 68px;
+    height: 28px;
+    border: 1px solid #999;
+    color: #ffffff;
+    background: #ebe5e5;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.switch_btn div {
+    width: 44px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 2px;
+}
+
+.switch_btn .on {
+    float: left;
+    background: #72bb8c;
+    border-right: 1px solid #999;
+    /*color: #fff;*/
+}
+
+.switch_btn .off {
+    float: right;
+    background: #aaa;
+    border-left: 1px solid #999;
+}
+
+
+
+/**************************************************  datagrid *************************************************************/
+
+
+
+
+/*--------------------------------------------------|
+| Lazy_Tree                                  |
+|---------------------------------------------------|
+|--------------------------------------------------*/
+
+*{margin:0;padding:0;}
+
+.selected {
+    /* background-color: #FBEC88; */
+    color:#1b7fc6;
+    font-size:16px;
+    font-weight:bold;
+}
+.dtree_node.selected  a{
+    font-size:16px;
+    color:#1b7fc6;
+}
+
+
+.dtree_node {
+    height:27px;
+    font-size:13px;
+    line-height:27px;
+    white-space:nowrap;
+    /* padding-left: 10px; */
+}
+
+.dtree_node span{
+    margin-top:0;
+    display:inline-block;
+    cursor:pointer;
+    height:27px;
+    line-height:27px;
+    text-align:center;
+    vertical-align: top;
+}
+.dtree_node span a:hover{
+    /* text-decoration: underline;
+    color: #0033FF */
+    text-decoration: underline;
+}
+.new_node {
+    display:none
+}
+.root_node{
+  /*  background-color:#f0f1f3;
+    height:38px;
+    line-height: 38px;
+     position: fixed; 
+    width: 225px;*/
+}
+
+.root_node span{
+    height:38px;
+    line-height: 38px;
+}
+
+.dtree_node span a{
+    text-decoration:none;
+    color:#333333;
+    float:left;
+    height:27px;
+    line-height:27px;
+}
+.root_node span a{
+    float:left;
+    height:38px;
+    line-height:38px;
+}
+.dtree_node span.prevlink,span.nextlink{
+    display:inline-block;
+    height:24px;
+    width:24px;
+    margin-top:6px;
+}
+
+.dtree_node span.prevlink{
+    margin-left:114px;
+    background:url('img/latest/prevnode_selected.png') no-repeat;
+}
+
+.secondnode{
+    /* margin-top:38px;   */
+}
+
+.dtree_node span.nextlink{
+    margin-left:10px;
+    background:url('img/latest/nextnode_selected.png') no-repeat;
+}
+
+.dtree_node span.prevlink:hover{
+    background:url('img/latest/prevnode_selected.png') no-repeat;
+}
+
+.dtree_node span.nextlink:hover{
+    background:url('img/latest/nextnode_selected.png') no-repeat;
+}
