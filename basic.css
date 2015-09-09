@@ -279,7 +279,7 @@ pre code {
 |--------------------------------------------------*/
 
 .progressbar{
-    border:1px solid #D3D3D3;
+    border:1px solid #777;
     border-radius:5px;
     overflow:hidden;
     height:25px;
@@ -299,3 +299,20 @@ pre code {
     width:0;
     height:25px
 }
+
+#btn_progress{
+    border: 1px solid #ddd;
+    background-color:#ddd;
+    color:#ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    /*display: inline-block;*/
+    height: 30px;
+    line-height:30px;
+    width:80px;
+    text-align: center;
+    margin:0 6px;
+}
+#btn_progress:hover{
+    border-color:#999;
+};

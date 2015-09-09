@@ -191,7 +191,9 @@ window.onload=function(){
 	 */
 	$('#instance_progress1').Lazy_ProgressBar(75);
 	$('#instance_progress2').Lazy_ProgressBar(0);
-	function test(){
+	$('#instance_progress2').Lazy_ProgressBar('setValue',0);
+	$("#btn_progress")[0].onclick = function(){
+		
 		var value = $('#instance_progress2').Lazy_ProgressBar('getValue');
 		if (value < 100){
 			value += Math.floor(Math.random() * 10);
@@ -199,6 +201,4 @@ window.onload=function(){
 			setTimeout(arguments.callee, 200);
 		}
 	}
-	
-	test();
 };
