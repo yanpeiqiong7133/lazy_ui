@@ -86,20 +86,28 @@ window.onload=function(){
 		columns : [
 			{
 					//sortable : true,				
-					title : 'Name',		
+					title : '昵称',		
 					content : 'name',
 					formatter:function(value,rowData,rowIndex){
 						return value;
 					}
 	        }, 
 			{
-					title : 'Number',				
+					title : '工号',				
 					content : 'number'
 	        },
 			{    
 				  
-					title : 'Engineer',           
+					title : '姓名',           
 					content : 'temp'
+	        },
+			{    
+				  
+					title : '结果',           
+					content : 'result',
+					operations : function(value,rowData,rowIndex){
+						return "<img  src='lazy_datagrid/images/event_right.png' style='cursor:default'>"
+					}
 	        }
 		  
 		],
@@ -172,4 +180,25 @@ window.onload=function(){
 		}
 		  
         });	 
+
+		instance_tree.itemClickById("1");
+		//setTimeout('instance_tree.selectNode("1","id");',1000);
+
+
+	
+	/**
+	 * ***********************************************************************  Lazy_Tree  *************************
+	 */
+	$('#instance_progress1').Lazy_ProgressBar(75);
+	$('#instance_progress2').Lazy_ProgressBar(0);
+	function test(){
+		var value = $('#instance_progress2').Lazy_ProgressBar('getValue');
+		if (value < 100){
+			value += Math.floor(Math.random() * 10);
+			$('#instance_progress2').Lazy_ProgressBar('setValue', value);
+			setTimeout(arguments.callee, 200);
+		}
+	}
+	
+	test();
 };

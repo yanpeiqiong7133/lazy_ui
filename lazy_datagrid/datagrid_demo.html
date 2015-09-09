@@ -110,23 +110,25 @@
 		  toolbar:[
 		  {
 				id : 'button1',
-				text : '获取当前页数据',
+				text : '操作1',
 				disabled : false,
 				iconCls : 'icon-add',
 				handler : function() {					
 				//	this.allModels.add({"name":"zero","number":"0","temp":"ypq"});
 				//	this.setCollection();
 					/* console.log(table.getCurrentPageModels()); */
+					alert("操作1");
 				}
 		  },
 		  {
 				id : 'button2',
 				disabled : false,
-				text : '获取所有数据',
+				text : '操作2',
 				iconCls : 'icon-cancel',
 				handler : _(function() {
 					//this.collection.remove({"name":"zero","number":"0","temp":"ypq"})
 					/* console.log(table.getAllModels()); */
+					alert("操作2");
 				}).bind(this)
 		  },
 		  {
@@ -155,38 +157,38 @@
 		  columns : [
 		  {
 				//sortable : true,
-				width : 25,
-				title : 'Name',		
+			//	width : 25,
+				title : '昵称',		
 				content : 'name',
 				formatter:function(value,rowData,rowIndex){
 					return value;
 				}
           }, 
 		  {
-				title : 'Number',
-				width : 25,
+				title : '工号',
+			//	width : 25,
 				content : 'number'
           },
 		  {
-			    width : 25,
+			//  width : 25,
 			    //sortable : true,
-				title : 'Engineer',           
+				title : '姓名',           
 				content : 'temp'
           },
 		  {
-				title : 'Operations',
-				width :22,
+				title : 'result',
+			//	width :22,
 				operations:function(value,rowData,rowIndex){
 				
-					var optStr={
-						name: rowData["name"],
-						number:rowData["number"],
-						temp:rowData["temp"]
-					}
-					var operate=[];
+					//var optStr={
+					//	name: rowData["name"],
+					//	number:rowData["number"],
+					//	temp:rowData["temp"]
+					//}
+					//var operate=[];
 					//operate.push(createOption("del",json2str(optStr), "删除","icon-migrate_delete"));
 					//operate.push(createOption("edit",json2str(optStr), "编辑","icon-migrate_edit"));
-					return operate.join(" ");
+					//return operate.join(" ");
 				
 					//var option1= '<span class="opt_delete">删除</span>';
 					//var option2='<span class="opt_edit">编辑</span>';
@@ -197,13 +199,14 @@
 					operate.push({optUrl:"edit.action",optName:"opt_edit",optMsg:"确定要修改吗？",showName:"编辑"});
 					return operate;
 					*/
+					return "<img  src='images/event_right.png'/>";
 			    }
 		  }
 		  ],
 		  pager:{
 				pageNo:1,
-				pageSize:15,
-				pageList:[2,5,10,15]
+				pageSize:10
+				/*pageList:[2,5,10,15]*/
 		  }
 		  
         });	   

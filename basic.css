@@ -232,7 +232,7 @@ pre code {
 
 .dtree_node span a{
     text-decoration:none;
-    color:#333333;
+    color:#6f726f;
     float:left;
     height:27px;
     line-height:27px;
@@ -269,4 +269,33 @@ pre code {
 
 .dtree_node span.nextlink:hover{
     background:url('img/latest/nextnode_selected.png') no-repeat;
+}
+
+
+
+/*--------------------------------------------------|
+| Lazy_ProgressBar                                 |
+|---------------------------------------------------|
+|--------------------------------------------------*/
+
+.progressbar{
+    border:1px solid #D3D3D3;
+    border-radius:5px;
+    overflow:hidden;
+    height:25px;
+    margin:5px;
+}
+.progressbar-text{
+    text-align:center;
+    color:#333;
+    border-radius:5px;
+    position:absolute;
+    line-height:25px;
+    height:25px
+}
+.progressbar-value{
+    background-color:#72BB8C;
+    border-radius:4px;
+    width:0;
+    height:25px
 }
